@@ -134,7 +134,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <NowPlayingBar />
+      <NowPlayingBar angry={score > ANGRY_AT} />
     </MotionConfig>
   );
 }

@@ -7,6 +7,10 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const SRC = "/telah-tiba.mp3";
 const TITLE = "Telah Tiba";
 const ARTIST = "The Rempit · Official Anthem";
+// Maximum Rempit (score past ANGRY_AT, superman.glb on screen) swaps the song too.
+const ANGRY_SRC = "/max.mp3";
+const ANGRY_TITLE = "Maximum Rempit";
+const ANGRY_ARTIST = "The Rempit · Overdrive Mix";
 
 // Stable random params so the waveform doesn't re-roll on every render.
 const BAR_PARAMS = Array.from({ length: 10 }, () => ({
@@ -23,8 +27,9 @@ function formatTime(s: number) {
 // Events that count as a user gesture for the browser autoplay policy.
 const GESTURES = ["pointerdown", "keydown", "touchend"] as const;
 
-function useSong() {
+function useSong(angry: boolean) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const currentSrcRef = useRef(SRC);
   const [isPlaying, setIsPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
   const [volume, setVolumeState] = useState(0.6);
@@ -75,6 +80,20 @@ function useSong() {
       audio.src = "";
     };
   }, []);
+
+  // Maximum Rempit: swap tracks, resuming playback if it was already playing.
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    const nextSrc = angry ? ANGRY_SRC : SRC;
+    if (currentSrcRef.current === nextSrc) return;
+    currentSrcRef.current = nextSrc;
+    const wasPlaying = !audio.paused;
+    audio.src = nextSrc;
+    audio.load();
+    audio.currentTime = 0;
+    if (wasPlaying) audio.play().catch(() => {});
+  }, [angry]);
 
   const togglePlay = useCallback(() => {
     const audio = audioRef.current;
@@ -203,10 +222,12 @@ function SeekBar({
   );
 }
 
-export default function NowPlayingBar() {
-  const { isPlaying, muted, volume, currentTime, duration, togglePlay, seek, setVolume } = useSong();
+export default function NowPlayingBar({ angry = false }: { angry?: boolean }) {
+  const { isPlaying, muted, volume, currentTime, duration, togglePlay, seek, setVolume } = useSong(angry);
   const VolumeIcon = muted || volume === 0 ? VolumeX : volume < 0.4 ? Volume1 : Volume2;
-  const subtitle = muted ? "Tap anywhere for sound" : ARTIST;
+  const title = angry ? ANGRY_TITLE : TITLE;
+  const artist = angry ? ANGRY_ARTIST : ARTIST;
+  const subtitle = muted ? "Tap anywhere for sound" : artist;
 
   return (
     <motion.div
@@ -223,7 +244,7 @@ export default function NowPlayingBar() {
       <div className="flex h-[calc(var(--bar-h)-0.25rem)] items-center gap-3 px-4 md:hidden">
         <Art isPlaying={isPlaying} className="h-10 w-10" />
         <div className="min-w-0 flex-1">
-          <p className="truncate text-sm font-medium text-zinc-100">{TITLE}</p>
+          <p className="truncate text-sm font-medium text-zinc-100">{title}</p>
           <p className={`truncate text-xs ${muted ? "text-accent-soft" : "text-zinc-400"}`}>
             {muted ? subtitle : `${formatTime(currentTime)} / ${formatTime(duration)}`}
           </p>
@@ -236,7 +257,7 @@ export default function NowPlayingBar() {
         <div className="flex w-[28%] min-w-0 items-center gap-3">
           <Art isPlaying={isPlaying} className="h-12 w-12" />
           <div className="min-w-0">
-            <p className="truncate text-sm font-medium text-zinc-100">{TITLE}</p>
+            <p className="truncate text-sm font-medium text-zinc-100">{title}</p>
             <p className={`truncate text-xs ${muted ? "text-accent-soft" : "text-zinc-400"}`}>{subtitle}</p>
           </div>
         </div>
