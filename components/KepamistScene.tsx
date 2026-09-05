@@ -7,9 +7,9 @@ import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import { Box3, Color, Group, MathUtils, type AmbientLight } from "three";
 import { ANGRY_AT } from "@/lib/quiz";
 
-// One mascot model for both states; angry mode is lights/shake/spilled matcha only (no character swap).
 const MODEL_URL = "/rempit.glb";
-const ANGRY_URL = "/rempit.glb";
+// Maximum Rempit swaps to the superman-pose model, on top of the lights, shake and spilled matcha.
+const ANGRY_URL = "/superman.glb";
 const MATCHA_URL = "/matcha.glb";
 const DRACO_PATH = "/draco/";
 useGLTF.preload(MODEL_URL, DRACO_PATH);

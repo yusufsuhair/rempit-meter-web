@@ -40,8 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# source 3D models (60-90 MB each); the optimised copies live in public/
+# source 3D models (60-100 MB each); the optimised copies live in public/
 /rempit.glb
+/superman.glb
 /matcha.glb
 
 # wrangler

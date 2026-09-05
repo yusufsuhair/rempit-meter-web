@@ -25,13 +25,16 @@ npm run build
 - `components/NowPlayingBar.tsx` — fixed bottom music player for `public/telah-tiba.mp3`. Autoplays with sound where the browser allows it; otherwise autoplays muted and unmutes on the first tap/click/key
 - `app/page.tsx` — layout and shared score state
 
-## The model
+## The models
 
-`public/rempit.glb` is a web-optimised copy of the source `rempit.glb`
-(75 MB → 1.64 MB, Draco-compressed, 1K WebP textures). The source file is git-ignored.
-There is no separate angry variant — "Maximum Rempit" mode reuses the same model and drives
-the red lights, the shake, and the spilled matcha (`public/matcha.glb`) instead of swapping
-the character. To regenerate the model after editing the source:
+Three GLBs, all Draco-compressed with 1K WebP textures; source files are git-ignored:
+
+- `public/rempit.glb` — the calm mascot (75 MB source → 1.64 MB).
+- `public/superman.glb` — swapped in at "Maximum Rempit" (score above `ANGRY_AT`), alongside
+  red lights, the shake, and the spilled matcha (96 MB source → 1.74 MB).
+- `public/matcha.glb` — the spilled drink prop shown in Maximum Rempit mode.
+
+To regenerate a model after editing its source, e.g. for `rempit.glb`:
 
 ```bash
 npx @gltf-transform/cli optimize rempit.glb public/rempit.glb \
