@@ -1,17 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <!-- The Rempit: pink hijab, deadpan face, on the void. -->
+  <!-- Helmet: a full-face racing helmet on the void. -->
   <rect width="64" height="64" rx="14" fill="#05010f"/>
-  <!-- Hijab: head and drape -->
-  <path d="M11 60C11 45 15 39 19 33C16 11 48 11 45 33C49 39 53 45 53 60Z" fill="#e3a3b2"/>
-  <!-- Hijab shadow fold along the face -->
-  <path d="M22 34C21 22 43 22 42 34C40 44 24 44 22 34Z" fill="#c97f93"/>
-  <!-- Face -->
-  <path d="M23 33C22 22 42 22 41 33C40 43 24 43 23 33Z" fill="#f4cba8"/>
-  <!-- Deadpan: half-lidded eyes and a flat mouth -->
-  <path d="M26.5 31.5h4M33.5 31.5h4" stroke="#05010f" stroke-width="1.8" stroke-linecap="round"/>
-  <circle cx="28.5" cy="32.4" r="1.3" fill="#05010f"/>
-  <circle cx="35.5" cy="32.4" r="1.3" fill="#05010f"/>
-  <path d="M29 37.5h6" stroke="#05010f" stroke-width="1.6" stroke-linecap="round"/>
-  <!-- Fuchsia pin: the brand accent -->
-  <circle cx="45" cy="44" r="2.6" fill="#e879f9"/>
+  <!-- Shell -->
+  <path d="M12 40C12 20 20 10 32 10C44 10 52 20 52 40C52 46 47 50 40 50H24C17 50 12 46 12 40Z" fill="#e879f9"/>
+  <!-- Chin bar -->
+  <path d="M18 42C18 50 24 54 32 54C40 54 46 50 46 42C46 47 41 50 32 50C23 50 18 47 18 42Z" fill="#c94fd8"/>
+  <!-- Visor -->
+  <path d="M16 32C16 24 22 20 32 20C42 20 48 24 48 32C48 37 43 39 32 39C21 39 16 37 16 32Z" fill="#05010f"/>
+  <!-- Visor shine -->
+  <path d="M20 27C23 24 27 23 31 23" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/>
+  <!-- Racing stripe -->
+  <rect x="29" y="10" width="6" height="14" rx="3" fill="#05010f" opacity="0.35"/>
+  <!-- Chin vent -->
+  <circle cx="32" cy="46" r="2.4" fill="#05010f"/>
 </svg>

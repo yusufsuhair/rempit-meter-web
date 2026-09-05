@@ -38,8 +38,27 @@ export default function Image() {
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ display: "flex", fontFamily: "Cherry Bomb One", fontSize: 116, lineHeight: 1 }}>
-            Rempit<span style={{ color: "#e879f9" }}>Meter</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
+            <svg width="96" height="96" viewBox="0 0 64 64" style={{ flexShrink: 0 }}>
+              <path
+                d="M12 40C12 20 20 10 32 10C44 10 52 20 52 40C52 46 47 50 40 50H24C17 50 12 46 12 40Z"
+                fill="#e879f9"
+              />
+              <path
+                d="M18 42C18 50 24 54 32 54C40 54 46 50 46 42C46 47 41 50 32 50C23 50 18 47 18 42Z"
+                fill="#c94fd8"
+              />
+              <path
+                d="M16 32C16 24 22 20 32 20C42 20 48 24 48 32C48 37 43 39 32 39C21 39 16 37 16 32Z"
+                fill="#05010f"
+              />
+              <path d="M20 27C23 24 27 23 31 23" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" opacity="0.55" />
+              <rect x="29" y="10" width="6" height="14" rx="3" fill="#05010f" opacity="0.35" />
+              <circle cx="32" cy="46" r="2.4" fill="#05010f" />
+            </svg>
+            <div style={{ display: "flex", fontFamily: "Cherry Bomb One", fontSize: 116, lineHeight: 1 }}>
+              Rempit<span style={{ color: "#e879f9" }}>Meter</span>
+            </div>
           </div>
           <div style={{ marginTop: 22, fontSize: 34, color: "rgba(255,255,255,0.72)" }}>
             A meter to evaluate your rempit-ism.
