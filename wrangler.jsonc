@@ -1,0 +1,13 @@
+// Cloudflare Workers: serves the static export in ./out as static assets, no server code.
+// This project uses the Workers Git-integration ("Workers Builds") deploy path:
+//   Build command: npm run build   (next build -> static export in ./out, see next.config.ts)
+//   Deploy command: npx wrangler deploy
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "rempit-meter-web",
+  "compatibility_date": "2026-09-06",
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}
