@@ -75,7 +75,7 @@ export default function Quiz({ questions, answers, score, onAnswer, onReset }: P
           >
             <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-widest text-white/60 sm:mb-4">
               <span aria-live="polite">
-                Question {step + 1} / {questions.length}
+                Soalan {step + 1} / {questions.length}
               </span>
               <span className="-my-2 ml-auto flex">
                 {step > 0 && (
@@ -87,11 +87,11 @@ export default function Quiz({ questions, answers, score, onAnswer, onReset }: P
                     }}
                     className="min-h-11 rounded-full px-3 hover:bg-white/10 hover:text-white"
                   >
-                    ← Back
+                    ← Undur
                   </button>
                 )}
                 <button type="button" onClick={() => pick(SKIP)} className="min-h-11 rounded-full px-3 hover:bg-white/10 hover:text-white">
-                  Skip →
+                  Langkau →
                 </button>
               </span>
             </div>
@@ -137,7 +137,7 @@ function Results({
   headingRef: (el: HTMLHeadingElement | null) => void;
 }) {
   const d = diagnose(score);
-  const text = `I scored ${score}% on the RempitMeter ${d.emoji} Diagnosis: ${d.title}. How rempit are you?`;
+  const text = `Saya dapat ${score}% dalam RempitMeter ${d.emoji} Diagnosis: ${d.title}. Berapa rempit awak?`;
   const url = typeof window === "undefined" ? "" : window.location.href;
   const shareX = `https://x.com/intent/post?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
   // Threads has no url param; the link rides in the text and unfurls into the OG card.
@@ -154,24 +154,24 @@ function Results({
       <div className="text-6xl" aria-hidden>
         {d.emoji}
       </div>
-      <p className="mt-4 text-xs uppercase tracking-widest text-white/60">Official diagnosis</p>
+      <p className="mt-4 text-xs uppercase tracking-widest text-white/60">Diagnosis rasmi</p>
       <h2 ref={headingRef} tabIndex={-1} className="font-display mt-1 text-3xl sm:text-4xl">
         {d.title}
       </h2>
       <p className="mx-auto mt-4 max-w-md text-white/80">{d.blurb}</p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
         <a href={shareX} target="_blank" rel="noopener noreferrer" className={primary}>
-          Share to X
+          Kongsi ke X
         </a>
         <a href={shareThreads} target="_blank" rel="noopener noreferrer" className={primary}>
-          Share to Threads
+          Kongsi ke Threads
         </a>
         <button
           type="button"
           onClick={onReset}
           className="rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:bg-white/10 active:scale-95"
         >
-          Try again
+          Cuba lagi
         </button>
       </div>
     </motion.div>

@@ -6,11 +6,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const SRC = "/telah-tiba.mp3";
 const TITLE = "Telah Tiba";
-const ARTIST = "The Rempit · Official Anthem";
-// Maximum Rempit (score past ANGRY_AT, superman.glb on screen) swaps the song too.
+const ARTIST = "Si Rempit · Lagu Rasmi";
+// Rempit Maksimum (skor lepas ANGRY_AT, superman.glb kat skrin) tukar lagu sekali.
 const ANGRY_SRC = "/max.mp3";
-const ANGRY_TITLE = "Maximum Rempit";
-const ANGRY_ARTIST = "The Rempit · Overdrive Mix";
+const ANGRY_TITLE = "Rempit Maksimum";
+const ANGRY_ARTIST = "Si Rempit · Mix Overdrive";
 
 // Stable random params so the waveform doesn't re-roll on every render.
 const BAR_PARAMS = Array.from({ length: 10 }, () => ({
@@ -134,7 +134,7 @@ function PlayPauseBtn({ isPlaying, onClick }: { isPlaying: boolean; onClick: () 
         onClick={onClick}
         whileTap={{ scale: 0.92 }}
         className="glow-accent relative flex h-11 w-11 items-center justify-center rounded-full bg-white text-zinc-950 motion-safe:transition-transform hover:scale-105"
-        aria-label={isPlaying ? "Pause" : "Play"}
+        aria-label={isPlaying ? "Jeda" : "Main"}
       >
         <AnimatePresence mode="wait">
           {isPlaying ? (
@@ -171,7 +171,7 @@ function Art({ isPlaying, className }: { isPlaying: boolean; className: string }
       <span
         className={`flex h-full w-full items-center justify-center text-lg font-bold motion-safe:transition-transform motion-safe:duration-700 ${isPlaying ? "scale-110" : "scale-100"}`}
       >
-        K
+        R
       </span>
       <AnimatePresence>
         {isPlaying && (
@@ -215,8 +215,8 @@ function SeekBar({
         step={0.1}
         value={currentTime}
         onChange={(e) => onSeek(Number(e.target.value))}
-        aria-label="Seek"
-        aria-valuetext={`${formatTime(currentTime)} of ${formatTime(duration)}`}
+        aria-label="Gerak"
+        aria-valuetext={`${formatTime(currentTime)} daripada ${formatTime(duration)}`}
       />
     </div>
   );
@@ -227,7 +227,7 @@ export default function NowPlayingBar({ angry = false }: { angry?: boolean }) {
   const VolumeIcon = muted || volume === 0 ? VolumeX : volume < 0.4 ? Volume1 : Volume2;
   const title = angry ? ANGRY_TITLE : TITLE;
   const artist = angry ? ANGRY_ARTIST : ARTIST;
-  const subtitle = muted ? "Tap anywhere for sound" : artist;
+  const subtitle = muted ? "Tekan mana-mana untuk bunyi" : artist;
 
   return (
     <motion.div
@@ -266,7 +266,7 @@ export default function NowPlayingBar({ angry = false }: { angry?: boolean }) {
           <div className="flex items-center gap-2">
             <button
               type="button"
-              aria-label="Restart"
+              aria-label="Mula semula"
               onClick={() => seek(0)}
               className="rounded-full p-3 text-zinc-400 transition-colors hover:text-white"
             >
@@ -303,7 +303,7 @@ export default function NowPlayingBar({ angry = false }: { angry?: boolean }) {
               step={0.02}
               value={volume}
               onChange={(e) => setVolume(Number(e.target.value))}
-              aria-label="Volume"
+              aria-label="Kelantangan"
               className="h-6 w-24 cursor-pointer accent-white hover:accent-accent"
             />
           </div>

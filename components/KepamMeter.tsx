@@ -23,7 +23,7 @@ export default function KepamMeter({ score, className = "" }: { score: number; c
     else spring.set(score);
   }, [score, spring, reduced]);
 
-  const label = score > ANGRY_AT ? "MAXIMUM REMPIT" : score > ANGRY_AT / 2 ? "getting rempit…" : "rempit level";
+  const label = score > ANGRY_AT ? "REMPIT MAKSIMUM" : score > ANGRY_AT / 2 ? "makin rempit…" : "tahap rempit";
 
   return (
     <div
@@ -33,7 +33,7 @@ export default function KepamMeter({ score, className = "" }: { score: number; c
       aria-valuemax={100}
       aria-valuenow={score}
       aria-valuetext={`${score}%, ${label}`}
-      aria-label="Rempit score"
+      aria-label="Skor rempit"
     >
       <svg viewBox="0 0 200 108" className="w-full overflow-visible" aria-hidden>
         <defs>

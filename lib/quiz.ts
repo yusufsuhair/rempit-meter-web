@@ -1,4 +1,4 @@
-/** Past this score he/she gets angry: red lights, shaking, the angry model, spilled matcha. */
+/** Past this score dia jadi marah: lampu merah, gegar, model marah, matcha tumpah. */
 export const ANGRY_AT = 40;
 
 export type Option = { label: string; weight: number };
@@ -7,151 +7,151 @@ export type Question = { prompt: string; options: Option[] };
 export const SKIP = -1;
 export type Answer = number | null;
 
-// Fixed order. Every question's heaviest option is the last one and weighs 20,
-// so picking the last option on every question scores exactly 100%.
+// Turutan tetap. Pilihan paling berat untuk setiap soalan ialah yang terakhir, beratnya 20,
+// jadi pilih pilihan terakhir untuk semua soalan akan bagi skor tepat 100%.
 export const QUESTIONS: Question[] = [
   {
-    prompt: "Do you ride without a helmet?",
+    prompt: "Awak tunggang tanpa helmet ke?",
     options: [
-      { label: "Never. Safety first.", weight: 0 },
-      { label: "Only for a quick trip to the warung.", weight: 6 },
-      { label: "Only when there's no roadblock ahead.", weight: 13 },
-      { label: "Helmet is for storing snacks, not my head.", weight: 20 },
+      { label: "Tak pernah. Safety first.", weight: 0 },
+      { label: "Untuk pergi warung sekejap je.", weight: 6 },
+      { label: "Bila takde roadblock depan je.", weight: 13 },
+      { label: "Helmet tu tempat simpan snek, bukan kepala.", weight: 20 },
     ],
   },
   {
-    prompt: "How do you feel about popping a wheelie (lajak) in traffic?",
+    prompt: "Macam mana perasaan awak buat lajak dalam trafik?",
     options: [
-      { label: "Terrifying. No thanks.", weight: 0 },
-      { label: "Tried it once, in an empty carpark.", weight: 6 },
-      { label: "Front wheel up for a few seconds at the lights.", weight: 13 },
-      { label: "Full lajak down the highway, one hand filming for TikTok.", weight: 20 },
+      { label: "Takut gila. Tak nak.", weight: 0 },
+      { label: "Pernah cuba sekali, kat parking kosong.", weight: 6 },
+      { label: "Angkat depan sekejap kat lampu isyarat.", weight: 13 },
+      { label: "Lajak penuh sepanjang lebuh raya, sebelah tangan rakam untuk TikTok.", weight: 20 },
     ],
   },
   {
-    prompt: "Your exhaust pipe situation?",
+    prompt: "Situasi ekzos motor awak macam mana?",
     options: [
-      { label: "Stock, straight from the showroom.", weight: 0 },
-      { label: "A bit louder than stock. Nothing crazy.", weight: 6 },
-      { label: "Bakar knalpot lipas. Wakes up the whole taman.", weight: 13 },
-      { label: "Cover pipe for inspection day, real pipe back on by night.", weight: 20 },
+      { label: "Stok, terus dari showroom.", weight: 0 },
+      { label: "Lagi bising sikit dari stok. Tak la teruk sangat.", weight: 6 },
+      { label: "Bakar knalpot lipas. Kejutkan seluruh taman.", weight: 13 },
+      { label: "Cover pipe masa nak inspection, pasang balik pipe betul time malam.", weight: 20 },
     ],
   },
   {
-    prompt: "It's 2am and the road is completely empty. You…",
+    prompt: "Pukul 2 pagi dan jalan kosong sepenuhnya. Awak…",
     options: [
-      { label: "Ride normally, follow the speed limit.", weight: 0 },
-      { label: "Speed up a little. Nobody's watching.", weight: 6 },
-      { label: "Full throttle. This is MY highway now.", weight: 13 },
-      { label: "Organise a convoy race in the group chat.", weight: 20 },
+      { label: "Tunggang biasa, ikut had laju.", weight: 0 },
+      { label: "Laju sikit. Takde orang tengok pun.", weight: 6 },
+      { label: "Full throttle. Ni lebuh raya AKU sekarang.", weight: 13 },
+      { label: "Anjur konvoi lumba dalam group chat.", weight: 20 },
     ],
   },
   {
-    prompt: "Weaving through traffic (selit-selit)?",
+    prompt: "Selit-selit dalam jem?",
     options: [
-      { label: "I stay in my lane like a good citizen.", weight: 0 },
-      { label: "Sometimes, if I'm running late.", weight: 6 },
-      { label: "Every single jam, mirrors folded in.", weight: 13 },
-      { label: "I selit between the bus and the divider. Zero gap needed.", weight: 20 },
+      { label: "Saya duduk dalam lane macam rakyat baik.", weight: 0 },
+      { label: "Kadang-kadang, kalau dah lambat.", weight: 6 },
+      { label: "Setiap kali jem, lipat cermin dua-dua.", weight: 13 },
+      { label: "Saya selit antara bas dengan pembahagi jalan. Tak payah gap pun boleh.", weight: 20 },
     ],
   },
   {
-    prompt: "A red light with no cars around. You…",
+    prompt: "Lampu merah, takde kereta langsung. Awak…",
     options: [
-      { label: "Stop and wait. Rules are rules.", weight: 0 },
-      { label: "Wait, but inch forward impatiently.", weight: 6 },
-      { label: "Slow-roll through if it's clearly empty.", weight: 13 },
+      { label: "Berhenti dan tunggu. Peraturan tetap peraturan.", weight: 0 },
+      { label: "Tunggu, tapi maju sikit-sikit sebab tak sabar.", weight: 6 },
+      { label: "Slow-roll je kalau memang kosong.", weight: 13 },
       { label: "Potong lampu merah. Lampu tu cuma hiasan.", weight: 20 },
     ],
   },
   {
-    prompt: "You spot a police roadblock ahead. You…",
+    prompt: "Awak nampak roadblock polis depan. Awak…",
     options: [
-      { label: "Slow down, prepare your license.", weight: 0 },
-      { label: "Take a small detour, just in case.", weight: 6 },
-      { label: "U-turn immediately, no questions asked.", weight: 13 },
-      { label: "Gas it and lari. Adrenaline of a lifetime.", weight: 20 },
+      { label: "Slow down, sediakan lesen.", weight: 0 },
+      { label: "Ambil jalan lain sikit, just in case.", weight: 6 },
+      { label: "U-turn terus, tak tanya soalan.", weight: 13 },
+      { label: "Gas dan lari. Adrenaline sekali seumur hidup.", weight: 20 },
     ],
   },
   {
-    prompt: "Riding two-up (bonceng), how many is normal for you?",
+    prompt: "Bonceng, berapa orang biasa untuk awak?",
     options: [
-      { label: "Just me, or one passenger max.", weight: 0 },
-      { label: "Two. Snug but safe-ish.", weight: 6 },
-      { label: "Three. Adik duduk depan tangki.", weight: 13 },
-      { label: "Four. Somehow. Nobody remembers how.", weight: 20 },
+      { label: "Saya sorang je, atau satu penumpang maksimum.", weight: 0 },
+      { label: "Dua orang. Padat tapi selamat-ish.", weight: 6 },
+      { label: "Tiga orang. Adik duduk depan tangki.", weight: 13 },
+      { label: "Empat orang. Entah macam mana. Tiada siapa ingat macam mana.", weight: 20 },
     ],
   },
   {
-    prompt: "Your bike's underglow / LED lights situation?",
+    prompt: "Situasi lampu underglow / LED motor awak?",
     options: [
-      { label: "None. Stock headlight only.", weight: 0 },
-      { label: "A small sticker or two.", weight: 6 },
-      { label: "Underglow lights that change colour with the music.", weight: 13 },
-      { label: "Full LED strip disco bike, visible from space.", weight: 20 },
+      { label: "Takde. Lampu depan stok je.", weight: 0 },
+      { label: "Ada sticker satu dua.", weight: 6 },
+      { label: "Lampu underglow yang tukar warna ikut lagu.", weight: 13 },
+      { label: "Motor disco LED penuh, nampak dari angkasa.", weight: 20 },
     ],
   },
   {
-    prompt: "At the mamak, engines start revving (sound war). You…",
+    prompt: "Kat mamak, enjin start rev (sound war). Awak…",
     options: [
-      { label: "Just eat your maggi goreng in peace.", weight: 0 },
-      { label: "Watch from a distance, mildly entertained.", weight: 6 },
-      { label: "Join in with a rev or two.", weight: 13 },
-      { label: "Full throttle. Sound perang. Mamak uncle is not happy.", weight: 20 },
+      { label: "Makan maggi goreng dengan aman je.", weight: 0 },
+      { label: "Tengok dari jauh, agak terhibur.", weight: 6 },
+      { label: "Join sekali, rev satu dua kali.", weight: 13 },
+      { label: "Full throttle. Sound perang. Pakcik mamak dah naik angin.", weight: 20 },
     ],
   },
   {
-    prompt: "Filming content on the bike for social media?",
+    prompt: "Rakam content atas motor untuk media sosial?",
     options: [
-      { label: "Never. Both hands on the handlebar, always.", weight: 0 },
-      { label: "Maybe a quick clip while parked at the lights.", weight: 6 },
-      { label: "Phone mounted, filming stunts regularly.", weight: 13 },
-      { label: "Riding one-handed, filming a wheelie, captioned “bahaya jgn ikut.”", weight: 20 },
+      { label: "Tak pernah. Dua-dua tangan atas handlebar, sentiasa.", weight: 0 },
+      { label: "Rakam sekejap masa berhenti kat lampu isyarat.", weight: 6 },
+      { label: "Phone pasang, rakam stunt selalu.", weight: 13 },
+      { label: "Tunggang sebelah tangan, rakam lajak, caption “bahaya jgn ikut.”", weight: 20 },
     ],
   },
   {
-    prompt: "A friend does something reckless on the road. You…",
+    prompt: "Member buat something reckless atas jalan. Awak…",
     options: [
-      { label: "Tell them to slow down. That's dangerous.", weight: 0 },
-      { label: "Laugh nervously and change the subject.", weight: 6 },
-      { label: "Hype them up in the comments.", weight: 13 },
-      { label: "Challenge them to do it again, but harder.", weight: 20 },
+      { label: "Suruh dia slow down. Tu bahaya.", weight: 0 },
+      { label: "Gelak gemuruh dan tukar topik.", weight: 6 },
+      { label: "Hype dia dalam komen.", weight: 13 },
+      { label: "Cabar dia buat lagi, lagi ganas.", weight: 20 },
     ],
   },
   {
-    prompt: "Basikal lajak nostalgia — did you ever mod a bicycle as a kid?",
+    prompt: "Nostalgia basikal lajak — pernah tak modify basikal masa kecik-kecik?",
     options: [
-      { label: "No, I rode normally to school.", weight: 0 },
-      { label: "Added a horn and some stickers.", weight: 6 },
-      { label: "No brakes, no lights, maximum vibes.", weight: 13 },
-      { label: "Sound system on the bicycle, louder than most motorcycles.", weight: 20 },
+      { label: "Tak, saya kayuh biasa je pergi sekolah.", weight: 0 },
+      { label: "Tambah hon dan beberapa sticker.", weight: 6 },
+      { label: "Takde brek, takde lampu, maximum vibes.", weight: 13 },
+      { label: "Pasang sound system atas basikal, lagi kuat dari kebanyakan motor.", weight: 20 },
     ],
   },
   {
-    prompt: "You get a saman (traffic summons). Your reaction?",
+    prompt: "Awak kena saman. Reaksi awak?",
     options: [
-      { label: "Pay it immediately. Lesson learned.", weight: 0 },
-      { label: "Sigh, and pay it eventually.", weight: 6 },
-      { label: "Ignore it and hope it disappears.", weight: 13 },
-      { label: "Collect samans like trophies.", weight: 20 },
+      { label: "Bayar terus. Dah dapat pengajaran.", weight: 0 },
+      { label: "Hela nafas, bayar jugak akhirnya.", weight: 6 },
+      { label: "Ignore je, harap hilang sendiri.", weight: 13 },
+      { label: "Kumpul saman macam trofi.", weight: 20 },
     ],
   },
   {
-    prompt: "Racing a car at the traffic light (grand prix)?",
+    prompt: "Lumba dengan kereta kat lampu isyarat (grand prix)?",
     options: [
-      { label: "I don't race. I'm just going home.", weight: 0 },
-      { label: "Maybe a little rev to test the engine.", weight: 6 },
-      { label: "Absolutely. First one to the next light wins.", weight: 13 },
-      { label: "I plan my route around traffic lights specifically for this.", weight: 20 },
+      { label: "Saya tak lumba. Saya nak balik rumah je.", weight: 0 },
+      { label: "Rev sikit test enjin je.", weight: 6 },
+      { label: "Mestilah. Siapa sampai dulu kat lampu depan menang.", weight: 13 },
+      { label: "Saya plan route ikut lampu isyarat khas untuk ni.", weight: 20 },
     ],
   },
   {
-    prompt: "How would your parents describe your riding style?",
+    prompt: "Macam mana mak ayah awak describe cara awak tunggang?",
     options: [
-      { label: "“Very safe, we don't worry.”", weight: 0 },
-      { label: "“A bit fast sometimes.”", weight: 6 },
-      { label: "“We've stopped asking where he/she is at night.”", weight: 13 },
-      { label: "“The neighbours know our address from the sound of his exhaust.”", weight: 20 },
+      { label: "“Selamat je, kami tak risau.”", weight: 0 },
+      { label: "“Laju sikit kadang-kadang.”", weight: 6 },
+      { label: "“Kami dah stop tanya dia kat mana time malam.”", weight: 13 },
+      { label: "“Jiran-jiran tahu alamat kami dari bunyi ekzos dia.”", weight: 20 },
     ],
   },
 ];
@@ -174,22 +174,22 @@ export type Diagnosis = { title: string; emoji: string; blurb: string };
 export function diagnose(score: number): Diagnosis {
   if (score <= 30)
     return {
-      title: "Innocent Rider",
+      title: "Penunggang Baik",
       emoji: "😇",
       blurb:
-        "Helmet on, indicator on, full stop at every red light. The road is measurably safer because you exist. Respect.",
+        "Helmet pakai, signal on, berhenti penuh kat setiap lampu merah. Jalan raya provenly lagi selamat sebab awak wujud. Respect.",
     };
   if (score <= 70)
     return {
-      title: "Weekend Warrior",
+      title: "Rempit Hujung Minggu",
       emoji: "😎",
       blurb:
-        "You know the thrill, you've felt the wind, but you still wear a helmet and pay your saman on time. Balanced. Boring, but balanced.",
+        "Awak tahu thrill dia, dah rasa angin tu, tapi still pakai helmet dan bayar saman on time. Balanced. Boring, tapi balanced.",
     };
   return {
-    title: "Certified Mat Rempit",
+    title: "Mat Rempit Bertauliah",
     emoji: "🏍️",
     blurb:
-      "Terpaling rempit. The mechanic knows you by name, the traffic police know your plate number, and your exhaust wakes up three housing areas. Slow down before mak marah.",
+      "Terpaling rempit. Mekanik kenal awak dengan nama, polis trafik hafal plat motor awak, dan ekzos awak kejutkan tiga kawasan taman. Slow down sebelum mak marah.",
   };
 }

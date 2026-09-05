@@ -13,7 +13,7 @@ const KepamistScene = dynamic(() => import("@/components/KepamistScene"), {
   ssr: false,
   loading: () => (
     <div className="flex h-full items-center justify-center px-2 text-center text-sm uppercase tracking-widest text-white/70">
-      Summoning the Rempit…
+      Memanggil Si Rempit…
     </div>
   ),
 });
@@ -66,15 +66,15 @@ export default function Home() {
                 Rempit<span className="text-accent">Meter</span>
               </h1>
               <p className="max-w-md text-lg text-white/70 sm:text-xl lg:text-2xl">
-                A meter to evaluate your rempit-ism.
+                Meter untuk nilai tahap kerempitan awak.
               </p>
               <div className="mt-2 hidden flex-col items-start gap-3 lg:flex">
                 <a href="#test" className={cta}>
-                  Take the test
+                  Mula ujian
                   <ArrowDown className="h-4 w-4" aria-hidden />
                 </a>
                 <p className="text-sm text-white/60">
-                  {QUESTIONS.length} questions. One official diagnosis.
+                  {QUESTIONS.length} soalan. Satu diagnosis rasmi.
                 </p>
               </div>
             </section>
@@ -83,7 +83,7 @@ export default function Home() {
             <section
               id="test"
               className="order-4 flex min-h-[calc(100svh-var(--bar-h))] scroll-mt-2 flex-col justify-center gap-4 px-4 py-10 sm:gap-6 sm:px-8"
-              aria-label="The test"
+              aria-label="Ujian"
             >
               <div className="flex items-center gap-3 lg:block">
                 {phone && (
@@ -118,18 +118,18 @@ export default function Home() {
           {/* The mascot. Phone: fills the hero between the copy and the CTA. Desktop: sticky for both screens. */}
           <div
             className="order-2 h-[calc(100svh-var(--bar-h)-14.25rem)] min-h-80 overflow-hidden lg:sticky lg:top-0 lg:h-[calc(100svh-var(--bar-h))]"
-            aria-label="The Rempit 3D model"
+            aria-label="Model 3D Si Rempit"
           >
             <KepamistScene score={score} />
           </div>
 
           <div className="order-3 flex flex-col items-center gap-2 px-4 pt-3 pb-6 lg:hidden">
             <a href="#test" className={cta}>
-              Take the test
+              Mula ujian
               <ArrowDown className="h-4 w-4" aria-hidden />
             </a>
             <p className="text-xs text-white/60">
-              {QUESTIONS.length} questions. One official diagnosis.
+              {QUESTIONS.length} soalan. Satu diagnosis rasmi.
             </p>
           </div>
         </div>

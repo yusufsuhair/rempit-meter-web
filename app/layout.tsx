@@ -12,10 +12,10 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? process.env.CF_PAGES_URL ??
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "RempitMeter",
-  description: "A meter to evaluate your rempit-ism. Answer 16 questions, get diagnosed.",
+  description: "Meter untuk nilai tahap kerempitan awak. Jawab 16 soalan, dapatkan diagnosis.",
   openGraph: {
     title: "RempitMeter",
-    description: "How rempit are you? Take the test.",
+    description: "Berapa rempit awak? Buat ujian ni.",
     type: "website",
   },
   twitter: { card: "summary_large_image" },
@@ -25,7 +25,7 @@ export const viewport: Viewport = { themeColor: "#05010f" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${fredoka.variable} ${cherry.variable} h-full antialiased`}>
+    <html lang="ms" className={`${fredoka.variable} ${cherry.variable} h-full antialiased`}>
       <body className="min-h-full">{children}</body>
     </html>
   );

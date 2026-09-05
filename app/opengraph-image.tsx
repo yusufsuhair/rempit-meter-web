@@ -4,7 +4,7 @@ import { join } from "node:path";
 
 // Static export (Cloudflare Pages): the card is rendered once at build time.
 export const dynamic = "force-static";
-export const alt = "RempitMeter: a meter to evaluate your rempit-ism. How rempit are you?";
+export const alt = "RempitMeter: meter untuk nilai tahap kerempitan awak. Berapa rempit awak?";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -61,9 +61,9 @@ export default function Image() {
             </div>
           </div>
           <div style={{ marginTop: 22, fontSize: 34, color: "rgba(255,255,255,0.72)" }}>
-            A meter to evaluate your rempit-ism.
+            Meter untuk nilai tahap kerempitan awak.
           </div>
-          <div style={{ marginTop: 56, fontSize: 40, fontWeight: 600 }}>How rempit are you?</div>
+          <div style={{ marginTop: 56, fontSize: 40, fontWeight: 600 }}>Berapa rempit awak?</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
           <svg width="400" viewBox="0 0 200 108">
@@ -83,7 +83,7 @@ export default function Image() {
           </svg>
           <div style={{ fontFamily: "Cherry Bomb One", fontSize: 96, lineHeight: 1, marginTop: -6 }}>100%</div>
           <div style={{ marginTop: 14, fontSize: 22, letterSpacing: 6, textTransform: "uppercase", color: "#ff2d2d" }}>
-            Maximum rempit
+            Rempit maksimum
           </div>
         </div>
       </div>

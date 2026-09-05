@@ -9,7 +9,7 @@ test("16 questions, 4 options each, the last option is always the heaviest (20)"
     assert.equal(q.options[3].weight, 20);
     assert.equal(Math.max(...q.options.map((o) => o.weight)), 20);
   }
-  assert.equal(QUESTIONS[0].prompt, "Do you ride without a helmet?");
+  assert.equal(QUESTIONS[0].prompt, "Awak tunggang tanpa helmet ke?");
 });
 
 test("no answers → 0, last option everywhere → 100", () => {
@@ -30,10 +30,10 @@ test("skipped questions drop out of the maximum; skipping all gives 0 not NaN", 
 });
 
 test("diagnosis bands", () => {
-  assert.equal(diagnose(0).title, "Innocent Rider");
-  assert.equal(diagnose(30).title, "Innocent Rider");
-  assert.equal(diagnose(31).title, "Weekend Warrior");
-  assert.equal(diagnose(70).title, "Weekend Warrior");
-  assert.equal(diagnose(71).title, "Certified Mat Rempit");
-  assert.equal(diagnose(100).title, "Certified Mat Rempit");
+  assert.equal(diagnose(0).title, "Penunggang Baik");
+  assert.equal(diagnose(30).title, "Penunggang Baik");
+  assert.equal(diagnose(31).title, "Rempit Hujung Minggu");
+  assert.equal(diagnose(70).title, "Rempit Hujung Minggu");
+  assert.equal(diagnose(71).title, "Mat Rempit Bertauliah");
+  assert.equal(diagnose(100).title, "Mat Rempit Bertauliah");
 });
